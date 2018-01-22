@@ -12,8 +12,8 @@ module.exports = merge(webpackBaseConfig, {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
-        filename: 'iview.js',
-        library: 'iview',
+        filename: 'vfly.js',
+        library: 'vfly',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

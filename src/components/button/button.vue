@@ -1,67 +1,92 @@
 <template>
-    <button :type="htmlType" :class="classes" :disabled="disabled" @click="handleClick">
-        <Icon class="ivu-load-loop" type="load-c" v-if="loading"></Icon>
-        <Icon :type="icon" v-if="icon && !loading"></Icon>
-        <span v-if="showSlot" ref="slot"><slot></slot></span>
-    </button>
+    <div :class="classes" :style="style" @click="handleClick" ref="VfButton">
+        <p :class="textStyle">
+            <slot name="icon"></slot>
+            {{text}}
+        </p>
+        <p :class="descStyle" v-if="showDescSlot">
+            <slot name="desc"></slot>
+        </p>
+    </div>
 </template>
 <script>
-    import Icon from '../icon';
-    import { oneOf } from '../../utils/assist';
 
-    const prefixCls = 'ivu-btn';
-
+    import prefixCls from '../../config/classprefix'
     export default {
-        name: 'Button',
-        components: { Icon },
+        name: 'VfButton',
         props: {
             type: {
+                type: String,
+                default: 'primary',
                 validator (value) {
-                    return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default']);
+                    return ['primary', 'default'].includes(value)
                 }
             },
-            shape: {
+            long: {
+                type: String,
                 validator (value) {
-                    return oneOf(value, ['circle', 'circle-outline']);
+                    return ['full', 'normal'].includes(value)
                 }
             },
             size: {
                 validator (value) {
-                    return oneOf(value, ['small', 'large', 'default']);
+                    return ['small', 'large'].includes(value)
                 }
             },
-            loading: Boolean,
+            radius: {
+                type: [String, Number, Boolean],
+                default: 0
+            },
+            plain: Boolean,
             disabled: Boolean,
-            htmlType: {
-                default: 'button',
-                validator (value) {
-                    return oneOf(value, ['button', 'submit', 'reset']);
-                }
-            },
-            icon: String,
-            long: {
-                type: Boolean,
-                default: false
-            }
-        },
+            color: String,
+            text: String,
+            desc: String,
+            icon: String
+    },
         data () {
             return {
-                showSlot: true
+                prefixCls: prefixCls.VfButton,
+                buttonHeight: 0
             };
         },
         computed: {
             classes () {
                 return [
-                    `${prefixCls}`,
+                    `${this.prefixCls}`,
                     {
-                        [`${prefixCls}-${this.type}`]: !!this.type,
-                        [`${prefixCls}-long`]: this.long,
-                        [`${prefixCls}-${this.shape}`]: !!this.shape,
-                        [`${prefixCls}-${this.size}`]: !!this.size,
-                        [`${prefixCls}-loading`]: this.loading != null && this.loading,
-                        [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon || this.loading)
+                        [`${this.prefixCls}-${this.type}`]: this.type,
+                        [`${this.prefixCls}-${this.long}`]: this.long,
+                        [`${this.prefixCls}-${this.size}`]: this.size,
+                        [`${this.prefixCls}-plain`]: this.plain,
+                        [`${this.prefixCls}-disabled`]: this.disabled
                     }
                 ];
+            },
+            textStyle () {
+                return `${this.prefixCls}__text`
+            },
+            descStyle () {
+                return `${this.prefixCls}__desc`
+            },
+            style () {
+                let styles = '';
+                // 控制颜色
+                if (this.color) {
+                    let buttonColor = this.plain ? `color:${this.color}` : `background-color:${this.color}`
+                    styles += `${buttonColor};border-color:${this.color};`
+                }
+                // 控制圆角
+                let defaultRadius = typeof this.radius === 'number' ? this.radius : 4
+                if (this.radius === 'half') {
+                    defaultRadius = this.buttonHeight
+                }
+                styles += `border-radius:${defaultRadius}px`
+
+                return styles
+            },
+            showDescSlot () {
+                return this.desc || this.$slots.desc
             }
         },
         methods: {
@@ -70,7 +95,10 @@
             }
         },
         mounted () {
-            this.showSlot = this.$slots.default !== undefined;
+            console.log(this.$slots)
+            this.$nextTick(() => {
+               this.buttonHeight = this.$refs.VfButton.offsetHeight
+            });
         }
     };
 </script>

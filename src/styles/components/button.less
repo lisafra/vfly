@@ -1,128 +1,66 @@
 @btn-prefix-cls: ~"@{css-prefix}btn";
+@btn-plain-cls: ~"@{btn-prefix-cls}-plain";
+@btn-content-desc: ~"@{btn-prefix-cls}__desc";
 
 .@{btn-prefix-cls} {
-    .btn;
-    .btn-default;
-
-    &-long{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: @font-weight-regular;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    user-select: none;
+    border: @1px solid @border-dark-color;
+    .button-size(14, 0);
+    &-primary {
+        .button-type(@white, @theme-color, @theme-color);
+    }
+    &-default {
+        .button-color(@primary-text-dark-color, @white, @border-dark-color);
+        &.@{btn-plain-cls} {
+            color: @primary-text-dark-color;
+            border-color: @primary-text-dark-color;
+        }
+    }
+    &-full {
         width: 100%;
     }
-
-    & > .ivu-icon + span, & > span + .ivu-icon{
-        margin-left: 4px;
+    &-normal {
+        width: 92%;
+        margin-left: 4%;
     }
-
-    &-primary {
-        .btn-primary;
-
-        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:not(:first-child):not(:last-child) {
-            border-right-color: @btn-group-border;
-            border-left-color: @btn-group-border;
-        }
-
-        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:first-child {
-            &:not(:last-child) {
-                border-right-color: @btn-group-border;
-                &[disabled] {
-                    border-right-color: @btn-default-border;
-                }
-            }
-        }
-
-        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:last-child:not(:first-child),
-        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) & + .@{btn-prefix-cls} {
-            border-left-color: @btn-group-border;
-            &[disabled] {
-                border-left-color: @btn-default-border;
-            }
-        }
-
-        .@{btn-prefix-cls}-group-vertical &:not(:first-child):not(:last-child) {
-            border-top-color: @btn-group-border;
-            border-bottom-color: @btn-group-border;
-        }
-
-        .@{btn-prefix-cls}-group-vertical &:first-child {
-            &:not(:last-child) {
-                border-bottom-color: @btn-group-border;
-                &[disabled] {
-                    border-top-color: @btn-default-border;
-                }
-            }
-        }
-
-        .@{btn-prefix-cls}-group-vertical &:last-child:not(:first-child),
-        .@{btn-prefix-cls}-group-vertical & + .@{btn-prefix-cls} {
-            border-top-color: @btn-group-border;
-            &[disabled] {
-                border-bottom-color: @btn-default-border;
-            }
-        }
+    &-large {
+        .button-size(16, 0);
     }
-
-    &-ghost {
-        .btn-ghost;
+    &-small {
+        .button-size(12, 0);
     }
-
-    &-dashed{
-        .btn-dashed;
+    &-plain {
+        background-color: @white !important;
     }
+}
 
-    &-text{
-        .btn-text;
+.button-size(@size; @border-radius) {
+    padding: @1px * (@size - 6) @1px * (@size - 6) * 2;
+    line-height: @1px * (@size + 8);
+    font-size: @1px * @size;
+    border-radius: @border-radius;
+    & > .@{btn-content-desc} {
+        line-height: @1px * (@size + 8);
+        font-size: @1px * (@size - 2);
     }
+}
 
-    &-success {
-        .btn-color(@success-color);
-    }
-
-    &-warning {
-        .btn-color(@warning-color);
-    }
-
-    &-error {
-        .btn-color(@error-color);
-    }
-
-    &-info {
-        .btn-color(@info-color);
-    }
-
-    &-circle,
-    &-circle-outline {
-        .btn-circle(@btn-prefix-cls);
-    }
-
-    &:before {
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        bottom: -1px;
-        right: -1px;
-        background: #fff;
-        opacity: 0.35;
-        content: '';
-        border-radius: inherit;
-        z-index: 1;
-        transition: opacity @transition-time;
-        pointer-events: none;
-        display: none;
-    }
-
-    &&-loading {
-        pointer-events: none;
-        position: relative;
-
-        &:before {
-            display: block;
-        }
-    }
-
-    &-group {
-        .btn-group(@btn-prefix-cls);
-    }
-
-    &-group-vertical {
-        .btn-group-vertical(@btn-prefix-cls);
+.button-color(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+}
+.button-type (@color; @background; @border) {
+    .button-color(@color, @background, @border);
+    border-color: @border;
+    &.@{btn-plain-cls} {
+        color: @background;
     }
 }

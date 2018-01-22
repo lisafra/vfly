@@ -1,11 +1,11 @@
 {
-  "name": "iview",
-  "version": "2.8.0",
-  "title": "iView",
+  "name": "vfly",
+  "version": "1.0.0",
+  "title": "vfly",
   "description": "A high quality  UI components Library with Vue.js",
-  "homepage": "http://www.iviewui.com",
+  "homepage": "",
   "keywords": [
-    "iview",
+    "vfly",
     "vue",
     "vue.js",
     "component",
@@ -13,7 +13,7 @@
     "ui",
     "framework"
   ],
-  "main": "dist/iview.js",
+  "main": "dist/vfly.js",
   "files": [
     "dist",
     "src"
@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iview/iview"
+    "url": "https://github.com/lisafra/vfly"
   },
-  "author": "Aresn",
+  "author": "Yulia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iview/iview/issues"
+    "url": "https://github.com/lisafra/vfly/issues"
   },
   "dependencies": {
     "async-validator": "^1.8.2",
@@ -91,6 +91,7 @@
     "sinon": "^3.3.0",
     "sinon-chai": "^2.14.0",
     "style-loader": "^0.13.1",
+    "underscore": "^1.8.3",
     "url-loader": "^0.5.9",
     "vue": "^2.5.13",
     "vue-hot-reload-api": "^1.3.3",
