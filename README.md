@@ -1,6 +1,6 @@
 # vfly
 
-> A Vue.js project
+> 一个可配置，可扩展，使用灵活的高质量前端ui组件。基于vue实现，后续会扩展react相关组件。
 
 ### Build Setup
 
