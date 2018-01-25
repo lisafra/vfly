@@ -45,7 +45,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ```
 
-2. 直接在页面中使用组件。想了解每个组件的使用方式，请阅读/src/components/${需要使用的组件}目录下的README.md。另外，因为组件是基于vue框架实现的，所以只能在vue的作用域中使用，示例如下：
+2. 直接在页面中使用组件。因为组件是基于vue框架实现的，所以只能在vue的作用域中使用，示例如下：
 
 ```html
 <div id="app">
@@ -66,6 +66,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     })
 </script>
 ```
+备注： 想了解每个组件的使用方式，请阅读/src/components/${需要使用的组件}目录下的README.md。
 
 #### npm安装：当插件使用 (全局引用，不需要用到的组件也会引入，代码体积大）
 
