@@ -75,7 +75,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   Vue.use(Vfly)
 ```
 - 在vue的模板文件中即可直接使用, 示例
-```
+```html
 <template>
     <vf-button class="reload-btn" text="reload" long="normal" radius></vf-button>
 </template>
@@ -89,7 +89,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ` npm install --save-dev babel-plugin-transform-imports `
 
 - 在.babelrc文件的"plugins"配置项中，使用插件
-```
+```javascript
 "plugins": [
   ["transform-imports", {
     "vfly": {
@@ -100,7 +100,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ]
 ```
 - 在需要的时候引用并注册组件
-```
+```javascript
 import { Button，Toast } from 'vfly'
 export default {
   components: { Button, Toast }
@@ -124,7 +124,7 @@ vfly-ui的基础样式，如果主题颜色、字体大小、边框、阴影、�
 
 # 样式设备适配
 vfly-ui的所有字体、行高、边距、宽高等都是通过rem表示，真实的1px = 0.1rem, 通过
-```
+```less
 body {
     font-size: 62.%;
 }
