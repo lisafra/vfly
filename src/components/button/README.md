@@ -6,12 +6,11 @@
 <vf-button>button</vf-button>
 
 <!-- 带圆角的幽灵按钮 -->
-<vf-button plain radius text="button"></vf-button>
+<vf-button plain radius>button</vf-button>
 
 <!--  带icon的按钮 -->
-<vf-button>
+<vf-button text="button">
     <Icon slot="icon" type="warn"></Icon>
-    button
 </vf-button>
 
 <!-- 带描述信息的按钮， 点击可切换按钮的颜色 -->
