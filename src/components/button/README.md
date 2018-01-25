@@ -3,7 +3,7 @@
 ```html
 
 <!-- 简单使用 -->
-<vf-button>click</vf-button>
+<vf-button>button</vf-button>
 
 <!-- 带圆角的幽灵按钮 -->
 <vf-button plain radius text="button"></vf-button>
