@@ -7,7 +7,8 @@
         <vf-button plain radius text="button">
             <Icon slot="icon" type="warn"></Icon>
         </vf-button>
-        <vf-button size="large" :type="selected ? 'primary' : 'default'" plain radius text="button" @click="selected = !selected">
+        <vf-button class="goods" size="large" :type="selected ? 'primary' : 'default'" plain radius @click="selected = !selected">
+            button
             <p slot="desc">hello</p>
         </vf-button>
         <vf-button text="button" long="full" size="large" style="margin: 10px 0">
@@ -41,5 +42,8 @@
     .my-botton{
         color: #00ff00 !important;
         border-color: #00ff00 !important;
+    }
+    .goods{
+        padding: 2rem 4rem;
     }
 </style>

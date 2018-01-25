@@ -1,5 +1,5 @@
 {
-  "name": "vfly",
+  "name": "vf-ui",
   "version": "1.0.0",
   "title": "vfly",
   "description": "A high quality  UI components Library with Vue.js",
@@ -34,7 +34,7 @@
     "type": "git",
     "url": "https://github.com/lisafra/vfly"
   },
-  "author": "Yulia",
+  "author": "lisafra",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lisafra/vfly/issues"

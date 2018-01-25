@@ -2,7 +2,7 @@
     <div :class="classes" :style="style" @click="handleClick" ref="VfButton">
         <p :class="textStyle">
             <slot name="icon"></slot>
-            {{text}}
+            <slot>{{text}}</slot>
         </p>
         <p :class="descStyle" v-if="showDescSlot">
             <slot name="desc"></slot>

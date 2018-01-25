@@ -1,8 +1,4 @@
-# button
-## type
-- default
-- primary
-- custom
+# button 组件使用说明
 
 ## props
 - type: default | primary
@@ -12,7 +8,6 @@
 - plain: true | false
 - disabled: true | false
 - color: #fff
-
 
 ## slot
 - default: 按钮主文字
