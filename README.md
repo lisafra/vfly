@@ -211,35 +211,35 @@ vf-ui希望能成长为一个组件极其丰富，使用极其灵活，人人可
 
 #### 开发环境目录树
 ```bash
-├─assets
-├─build
-├─dist
+├─assets    // 静态资源，如图片
+├─build     // 开发环境搭建与配置相关文件
+├─dist      // 打包后的资源文件，也是npm包中引用的文件
 │  ├─locale
 │  └─styles
-│      └─fonts
-├─examples
+│    └─fonts
+├─examples   // 组件测试效果示例文件所在位置
 │  ├─components
 │  ├─pages
 │  └─router
-├─src
-│  ├─components
+├─src   // 组件开发相关文件所在位置
+│  ├─components  // 所有组件存放位置
 │  │  ├─button
 │  │  ├─icon
 │  │  └─Toast
-│  ├─config
-│  ├─directives
-│  ├─locale
+│  ├─config  // 公用配置变量存放位置
+│  ├─directives  // vue自定义指令存放位置
+│  ├─locale   // 语言包相关文件存放位置
 │  │  └─lang
-│  ├─mixins
-│  ├─styles
-│  │  ├─animation
-│  │  ├─common
+│  ├─mixins  // 组件实例扩展方法存放位置
+│  ├─styles  // 组件样式存放位置
+│  │  ├─animation  // 动画样式存放位置
+│  │  ├─common     // 公用样式存放位置
 │  │  │  └─iconfont
 │  │  │      └─fonts
-│  │  ├─components
-│  │  └─mixins
-│  └─utils
-└─test
+│  │  ├─components  // 组件样式存放位置
+│  │  └─mixins  // 公用样式方法存放位置
+│  └─utils // 公用js类、插件存放位置
+└─test  // 测试相关代码存放位置
 ```
 
 #### 规范
@@ -250,12 +250,15 @@ vf-ui希望能成长为一个组件极其丰富，使用极其灵活，人人可
 
 - 组件中和样式表中，写样式名时，请使用统一的样式前缀变量
 
+- 书写样式时，尽量使用src/styles/custom.less中定义的变量
+
 - 所有的字体、行高、边距、宽度等样式，请使用@1px计算，不要用px、em、rem。 示例：
 ```less
 div {
   margin: @1px * 15  //  上下左右都是15px
 }
 ```
+- 重复使用3次以上的样式且在custom.less中没有定义变量，请在custom.less中定义后，再使用变量表示
 
 
 
