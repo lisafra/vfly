@@ -33,7 +33,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 #### script 方式引用
 
-1. 下载相关js、css文件到自己的项目目录里，并在页面引用。需要注意的是，在拷贝样式表时请将fonts文件夹一并拷贝到styles文件夹里。
+1. 下载相关js、css文件到自己的项目目录里，并在页面引用。在拷贝样式表时请将fonts文件夹一并拷贝到styles文件夹里。
 
 ```html
 <!-- import Vue.js -->
