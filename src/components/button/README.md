@@ -1,5 +1,30 @@
 # 使用说明
 
+```html
+
+<!-- 简单使用 -->
+<vf-button>click</vf-button>
+
+<!-- 带圆角的幽灵按钮 -->
+<vf-button plain radius text="button"></vf-button>
+
+<!--  带icon的按钮 -->
+<vf-button>
+    <Icon slot="icon" type="warn"></Icon>
+    button
+</vf-button>
+
+<!-- 带描述信息的按钮， 点击可切换按钮的颜色 -->
+<vf-button size="large" :type="selected ? 'primary' : 'default'" plain radius @click="selected = !selected">
+    button
+    <p slot="desc">hello</p>
+</vf-button>
+
+<!-- 全屏大按钮 -->
+<vf-button text="button" long="full" size="large"></vf-button>
+
+```
+
 ### API
 
 #### props
