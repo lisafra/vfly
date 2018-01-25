@@ -200,3 +200,64 @@ body {
 
 @1px: .02rem; // 字体、边距、宽度、高度等基础计算单位
 ```
+
+####
+---
+####
+
+### 参与贡献
+
+vf-ui希望能成长为一个组件极其丰富，使用极其灵活，人人可参与贡献的前端ui组件平台。如果你正在使用vue开发页面，你的页面中又有可重复使用的模块，那么请把它按照我们的规范封装贡献出来吧。
+
+#### 开发环境目录树
+```bash
+├─assets
+├─build
+├─dist
+│  ├─locale
+│  └─styles
+│      └─fonts
+├─examples
+│  ├─components
+│  ├─pages
+│  └─router
+├─src
+│  ├─components
+│  │  ├─button
+│  │  ├─icon
+│  │  └─Toast
+│  ├─config
+│  ├─directives
+│  ├─locale
+│  │  └─lang
+│  ├─mixins
+│  ├─styles
+│  │  ├─animation
+│  │  ├─common
+│  │  │  └─iconfont
+│  │  │      └─fonts
+│  │  ├─components
+│  │  └─mixins
+│  └─utils
+└─test
+```
+
+#### 规范
+
+- 组件命名使用驼峰，加'Vf'前缀。如: VfHeader, VfButton
+
+- 每个组件样式前缀统一在src/config/classprefix.js中定义， 格式为： 'vf' + 组件名
+
+- 组件中和样式表中，写样式名时，请使用统一的样式前缀变量
+
+- 所有的字体、行高、边距、宽度等样式，请使用@1px计算，不要用px、em、rem。 示例：
+```less
+div {
+  margin: @1px * 15  //  上下左右都是15px
+}
+```
+
+
+
+
+
