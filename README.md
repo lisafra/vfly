@@ -167,17 +167,17 @@ vf-ui修改样式非常灵活，既可以直接在组件上添加自定义样式
 
 2. 参数配置。这种方式比较适应修改组件的整体风格样式，比如主题色，font-famaily，标题正文颜色，动画时长，层级关系等等。由于vf-ui的样式都是使用less来配置参数的，所以自定义样式配置也必需使用less。示例：
 
-- 新建一个theme.less的样式表，引入vfly-ui的样式入口文件，对照配置表修改相关的配置
+  - 新建一个theme.less的样式表，引入vfly-ui的样式入口文件，对照配置表修改相关的配置
 
-```less
-@import "~vf-ui/src/styles/index";
+  ```less
+  @import "~vf-ui/src/styles/index";
 
-@theme-color: #1890ff;  // 主题颜色
-```
+  @theme-color: #1890ff;  // 主题颜色
+  ```
 
-- 在自己的app样式入口文件中引入theme.less即可。
+  - 在自己的app样式入口文件中引入theme.less即可。
 
-- 相关可配置的参数，详见[自定义样式配置表]()。
+  - 相关可配置的参数，详见[自定义样式配置表]()。
 
 ####
 ---
