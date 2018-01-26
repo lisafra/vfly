@@ -1,0 +1,31 @@
+.component-detail {
+  min-height: 100vh;
+  background-color: @white;
+  padding: @1px * 50 @20px;
+  .component-name {
+    margin-bottom: @30px;
+    padding: @1px * 15 0;
+    text-align: center;
+    font-weight: @font-weight-medium;
+    span {
+      display: inline-block;
+      padding-bottom: @10px;
+      font-size: @20px;
+      .border-bottom-1px(@border-dark-color);
+    }
+  }
+  .component-use-example {
+    .example-item{
+      & > p {
+        margin-bottom: @10px;
+        text-align: center;
+        &.example-desc {
+          padding-top: @10px;
+          text-align: left;
+          font-size: @14px;
+          line-height: @line-height-14;
+        }
+      }
+    }
+  }
+}

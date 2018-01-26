@@ -1,6 +1,6 @@
 <template>
   <transition :name="transitionType[position]">
-    <div :class="prefixCls + '-wrap'" :style="wrapStyle" v-show="visible">
+    <div :class="prefixCls + '-wrap'" :style="wrapStyle" v-if="visible">
       <div :class="customClass">
         <Icon :type="icon" v-if="icon"></Icon>
         <p :class="prefixCls + '__text'">{{ message }}</p>

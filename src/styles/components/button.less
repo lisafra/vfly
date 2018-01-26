@@ -1,6 +1,7 @@
 @btn-prefix-cls: ~"@{css-prefix}btn";
 @btn-plain-cls: ~"@{btn-prefix-cls}-plain";
 @btn-content-desc: ~"@{btn-prefix-cls}__desc";
+@btn-disabled-cls: ~"@{btn-prefix-cls}-disabled";
 
 .@{btn-prefix-cls} {
     display: inline-block;
@@ -15,12 +16,18 @@
     .button-size(14, 0);
     &-primary {
         .button-type(@white, @theme-color, @theme-color);
+        &.@{btn-disabled-cls} {
+            color: rgba(255,255,255,.7);
+        }
     }
     &-default {
         .button-color(@primary-text-dark-color, @white, @border-dark-color);
         &.@{btn-plain-cls} {
             color: @primary-text-dark-color;
             border-color: @primary-text-dark-color;
+        }
+        &.@{btn-disabled-cls} {
+            .button-type(@white, @disable-dark-color, @disable-dark-color);
         }
     }
     &-full {

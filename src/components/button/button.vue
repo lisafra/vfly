@@ -74,6 +74,9 @@
                     let buttonColor = this.plain ? `color:${this.color}` : `background-color:${this.color}`
                     styles += `${buttonColor};border-color:${this.color};`
                 }
+                if (this.disabled) {
+                    styles += `opacity:.7;`
+                }
                 // 控制圆角
                 let defaultRadius = typeof this.radius === 'number' ? this.radius : 4
                 if (this.radius === 'half') {

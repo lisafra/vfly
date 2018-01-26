@@ -8,12 +8,20 @@ export default new Router({
     mode: 'history',
     routes: [
         {
+            path: '/',
+            component: require('../pages/index.vue')
+        },
+        {
             path: '/button',
             component: require('../pages/button.vue')
         },
         {
-            path: '/message',
-            component: require('../pages/message.vue')
+            path: '/toast',
+            component: require('../pages/toast.vue')
+        },
+        {
+            path: '/icon',
+            component: require('../pages/toast.vue')
         }
     ]
 })
