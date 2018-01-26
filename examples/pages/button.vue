@@ -30,7 +30,7 @@
             fnShowToast () {
                 this.$Toast({
                     message: 'hello world, this is my life',
-                    // icon: 'success',
+                    icon: 'success',
                     position: 'bottom'
                 })
             }

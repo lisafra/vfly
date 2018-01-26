@@ -5,12 +5,11 @@
             <slot>{{text}}</slot>
         </p>
         <p :class="descStyle" v-if="showDescSlot">
-            <slot name="desc"></slot>
+            <slot name="desc">{{desc}}</slot>
         </p>
     </div>
 </template>
 <script>
-
     import prefixCls from '../../config/classprefix'
     export default {
         name: 'VfButton',
@@ -41,8 +40,7 @@
             disabled: Boolean,
             color: String,
             text: String,
-            desc: String,
-            icon: String
+            desc: String
     },
         data () {
             return {
