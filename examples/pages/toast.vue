@@ -17,7 +17,19 @@
             <div class="example-item">
                 <p class="example-desc">icon</p>
                 <p>
-                    <vf-button long="normal" plain @click="fnIconToast">success icon</vf-button>
+                    <vf-button long="normal" plain @click="fnIconToast('success')">success icon</vf-button>
+                </p>
+                <p>
+                    <vf-button long="normal" plain @click="fnIconToast('warn')">warn icon</vf-button>
+                </p>
+            </div>
+            <div class="example-item">
+                <p class="example-desc">long text</p>
+                <p>
+                    <vf-button long="normal" plain @click="fnlongTextToast">long text</vf-button>
+                </p>
+                <p>
+                    <vf-button long="normal" plain @click="fnlonglongTextToast">long long text</vf-button>
                 </p>
             </div>
         </div>
@@ -41,10 +53,20 @@
                     position: position
                 })
             },
-            fnIconToast () {
+            fnIconToast (iconName) {
                 this.$Toast({
-                    icon: 'success',
-                    message: `success`
+                    icon: iconName,
+                    message: iconName
+                })
+            },
+            fnlongTextToast () {
+                this.$Toast({
+                    message: 'this is a long text test'
+                })
+            },
+            fnlonglongTextToast () {
+                this.$Toast({
+                    message: 'this is a long long text example'
                 })
             }
         }

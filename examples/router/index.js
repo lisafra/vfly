@@ -21,7 +21,7 @@ export default new Router({
         },
         {
             path: '/icon',
-            component: require('../pages/toast.vue')
+            component: require('../pages/icon.vue')
         }
     ]
 })

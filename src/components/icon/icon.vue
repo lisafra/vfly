@@ -7,11 +7,16 @@
     export default {
         name: 'Icon',
         props: {
-            type: String
+            type: String,
+            className: String
         },
         computed: {
             classes () {
-                return `${prefixCls} icon-${this.type}`;
+                return `
+                    ${prefixCls}
+                    icon-${this.type}
+                    ${this.className}
+                `;
             }
         }
     };
