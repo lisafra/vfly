@@ -15,6 +15,15 @@
                 </p>
             </div>
             <div class="example-item">
+                <p class="example-desc">duration</p>
+                <p>
+                    <vf-button long="normal" plain @click="fnDurationToast(1000)">1000ms</vf-button>
+                </p>
+                <p>
+                    <vf-button long="normal" plain @click="fnDurationToast(2000)">2000mst</vf-button>
+                </p>
+            </div>
+            <div class="example-item">
                 <p class="example-desc">icon</p>
                 <p>
                     <vf-button long="normal" plain @click="fnIconToast('success')">success icon</vf-button>
@@ -67,6 +76,12 @@
             fnlonglongTextToast () {
                 this.$Toast({
                     message: 'this is a long long text example'
+                })
+            },
+            fnDurationToast (duration) {
+                this.$Toast({
+                    message: `pause time : ${duration}`,
+                    duration: duration
                 })
             }
         }
